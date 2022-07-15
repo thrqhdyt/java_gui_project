@@ -522,9 +522,6 @@ public class frm_pelanggan extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int row = jTable2.getSelectedRow();
         selectedIdPelanggan = jTable2.getValueAt(row, 0).toString();
-        selectedNamaPelanggan = jTable2.getValueAt(row, 1).toString();
-        selectedAlamat = jTable2.getValueAt(row, 2).toString();
-        selectedNoTelp = jTable2.getValueAt(row, 3).toString();
 
         try {
             String sql = "DELETE FROM t_pelanggan WHERE id_pelanggan = '%s'";
@@ -533,7 +530,6 @@ public class frm_pelanggan extends javax.swing.JFrame {
             refreshTable();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Data Gagal Dihapus");
-            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -541,7 +537,7 @@ public class frm_pelanggan extends javax.swing.JFrame {
         try {
             refreshTable(jTextField5.getText());
         } catch (SQLException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Data Tidak ditemukan");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

@@ -145,7 +145,7 @@ public class frm_jenisCucian extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(255, 107, 107));
+        jPanel3.setBackground(new java.awt.Color(255, 204, 102));
 
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -189,7 +189,6 @@ public class frm_jenisCucian extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
-        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 102));
@@ -435,8 +434,6 @@ public class frm_jenisCucian extends javax.swing.JFrame {
         // TODO add your handling code here:
         int row = jTable1.getSelectedRow();
         selectedIdJenis = jTable1.getValueAt(row, 0).toString();
-        selectedJenisCucian = jTable1.getValueAt(row, 1).toString();
-        selectedHarga = jTable1.getValueAt(row, 2).toString();
 
         try {
             String sql = "DELETE FROM t_jenis_cucian WHERE id_jenis_cucian = '%s'";
@@ -454,7 +451,7 @@ public class frm_jenisCucian extends javax.swing.JFrame {
         try {
             refreshTable(jTextField4.getText());
         } catch (SQLException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Data Tidak ditemukan");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
